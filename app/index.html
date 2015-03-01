@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" ng-app="firstApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{data.title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css">
+
+    <!-- build:js scripts/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container" ng-controller="MainCtrl">
+
+        <nav class="navbar navbar-static-top navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Gulp Angularfire</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ng-href="#">Home</a>
+                    </li>
+                    <li><a ng-href="#">About</a>
+                    </li>
+                    <li><a ng-href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron text-center">
+            <h1>{{data.title}}</h1>
+
+            <p>
+                <input type="text" placeholder="email" ng-model="newUser.email"/>
+            </p>
+            <p>
+                <input type="password" placeholder="password" ng-model="newUser.password"/>
+            </p>
+            <p>
+                <a ng-if="!loggedIn" class="btn btn-lg btn-success" ng-href="#" ng-click="login()">login</a>
+
+                <a ng-if="loggedIn" class="btn btn-lg btn-danger" ng-href="#" ng-click="logout()">logout</a>
+
+                <a class="btn btn-lg btn-warning" ng-href="#" ng-click="register()">register</a>
+
+
+            </p>
+            <pre>{{newUser|json}}</pre>
+            <pre>{{status|json}}</pre>
+        </div>
+
+        <hr>
+
+        <div class="footer">
+            <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a>
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/firstApp.js"></script>
+    <script src="scripts/main/main-ctrl.js"></script>
+    <!-- inject:partials -->
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</body>
+
+</html>

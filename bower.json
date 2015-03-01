@@ -1,0 +1,21 @@
+{
+  "name": "firstApp",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "2.8.x",
+    "angular": "1.2.x",
+    "bootstrap-sass-official": "3.1.x",
+    "firebase": "2.2.1",
+    "angularfire": "0.9.2",
+    "toastr": "~2.1.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.x"
+  },
+  "resolutions": {
+    "angular": "1.2.x",
+    "modernizr": "2.8.x",
+    "firebase": "2.2.1",
+    "angularfire": "0.9.2"
+  }
+}
