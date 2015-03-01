@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" ng-app="firstApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{data.title}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/main-d423c258.css">
+
+    <script src="scripts/modernizr-c1ff1650.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container" ng-controller="MainCtrl">
+
+        <nav class="navbar navbar-static-top navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Gulp Angularfire</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a ng-href="#">Home</a>
+                    </li>
+                    <li><a ng-href="#">About</a>
+                    </li>
+                    <li><a ng-href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron text-center">
+            <h1>{{data.title}}</h1>
+
+            <p>
+                <input type="text" placeholder="email" ng-model="newUser.email"/>
+            </p>
+            <p>
+                <input type="password" placeholder="password" ng-model="newUser.password"/>
+            </p>
+            <p>
+                <a ng-if="!loggedIn" class="btn btn-lg btn-success" ng-href="#" ng-click="login()">login</a>
+
+                <a class="btn btn-lg btn-warning" ng-href="#" ng-click="register()">register</a>
+
+                <a ng-if="loggedIn" class="btn btn-lg btn-danger" ng-href="#" ng-click="logout()">logout</a>
+            </p>
+            <pre>{{newUser|json}}</pre>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in awesomeThings | orderBy:'rank'">
+                <div class="thumbnail">
+                    <img class="pull-right" ng-src="images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
+                    <div class="caption">
+                        <h3>{{awesomeThing.title}}</h3>
+                        <p>{{awesomeThing.description}}</p>
+                        <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="footer">
+            <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a>
+            </p>
+        </div>
+
+    </div>
+
+
+    <script src="scripts/vendor-b171935c.js"></script>
+
+    <script src="scripts/main-95fa33d3.js"></script>
+
+</body>
+
+</html>
